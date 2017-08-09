@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "164843263459",
+    "firebase_url": "https://synesthesia-2bacc.firebaseio.com",
+    "project_id": "synesthesia-2bacc",
+    "storage_bucket": "synesthesia-2bacc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164843263459:android:71918807c1253b6c",
+        "android_client_info": {
+          "package_name": "com.dado.stezija"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164843263459-45a3v1pmqt8au1m3816iv33bgeuo4v6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQhavZI5vA5H44jAT7kombkgzs0JzI62c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
