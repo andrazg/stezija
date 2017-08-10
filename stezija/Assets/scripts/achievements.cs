@@ -28,7 +28,7 @@ public class achievements : MonoBehaviour
     void Start()
     {
         trophyloc.position = notWon;
-        roundreached.text = "Round reached: " + PlayerPrefs.GetInt("level");
+        roundreached.text = "Round passed: " + PlayerPrefs.GetInt("level");
         checkpoint.text = "Checkpoint: " + PlayerPrefs.GetInt("checkpoint");
 
         Vector3 move = new Vector3(0, 1, 0);

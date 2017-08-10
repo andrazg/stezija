@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{440AA89E-A4D6-321F-3295-C4EBFE83E53A}</ProjectGuid>
+    <ProjectGuid>{2E66216E-9A6E-1D8E-50EB-879169E78F98}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -144,17 +144,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Stezija.Plugins.csproj">
-      <Project>{99EC15A6-A96E-A1C3-792E-16991AEE8952}</Project>
-      <Name>Stezija.Plugins</Name>
+    <ProjectReference Include="stezija.Plugins.csproj">
+      <Project>{85BC249B-1771-2F66-2882-69D9E2D0956F}</Project>
+      <Name>stezija.Plugins</Name>
     </ProjectReference>
-    <ProjectReference Include="Stezija.csproj">
-      <Project>{81D05B66-52A5-FEA7-18DA-72E74D6BC317}</Project>
-      <Name>Stezija</Name>
+    <ProjectReference Include="stezija.csproj">
+      <Project>{C7B0C239-60D1-C497-C0F4-818F83BF3671}</Project>
+      <Name>stezija</Name>
     </ProjectReference>
-    <ProjectReference Include="Stezija.Editor.Plugins.csproj">
-      <Project>{EA5CF24D-702C-9386-D3A3-AE0FE7EB2E26}</Project>
-      <Name>Stezija.Editor.Plugins</Name>
+    <ProjectReference Include="stezija.Editor.Plugins.csproj">
+      <Project>{501A3F41-3001-B9E0-2F54-FDACF75933D7}</Project>
+      <Name>stezija.Editor.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

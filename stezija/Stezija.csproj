@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{81D05B66-52A5-FEA7-18DA-72E74D6BC317}</ProjectGuid>
+    <ProjectGuid>{C7B0C239-60D1-C497-C0F4-818F83BF3671}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -93,9 +93,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Stezija.Plugins.csproj">
-      <Project>{99EC15A6-A96E-A1C3-792E-16991AEE8952}</Project>
-      <Name>Stezija.Plugins</Name>
+    <ProjectReference Include="stezija.Plugins.csproj">
+      <Project>{85BC249B-1771-2F66-2882-69D9E2D0956F}</Project>
+      <Name>stezija.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
