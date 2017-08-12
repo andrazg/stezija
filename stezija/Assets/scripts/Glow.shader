@@ -15,8 +15,8 @@ Shader "Glow" {
 
 		Pass{
 		CGPROGRAM
-#pragma vertex vert
-#pragma fragment frag
+		#pragma vertex vert
+		#pragma fragment frag
 
 		sampler2D _MainTex;
 		half4 _MainTex_ST;

@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
         
         hd = GameObject.FindGameObjectWithTag("perk").GetComponent<hud>();
     }
-    /// levels at primer numbers will have to be listened carefully/// not so beautifully written 
+    /// levels at prime numbers will have to be listened carefully// not so beautifully written 
     void prime(int round)
     {
         int i = 0;
