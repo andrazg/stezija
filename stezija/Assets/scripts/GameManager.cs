@@ -171,7 +171,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    //////////////////////////////////// all the tiles wil color themselves same color
+    //////////////////////////////////// all the tiles will color themselves same color
     IEnumerator Nocol()
     {
         pause = true;
@@ -246,6 +246,10 @@ public class GameManager : MonoBehaviour
         pause = true;
         //this i added for the tutorial exit
         result.Clear();
+      if(puzzle.Count == 0 )
+      {
+         puzzle.Add( Random.Range( 1, 5 ) );
+      }
         AudioSource av = GetComponent<AudioSource>();
         yield return new WaitForSeconds(wait);
         for (int i = 0; i < puzzle.Count; i++)
@@ -288,8 +292,8 @@ public class GameManager : MonoBehaviour
     {
         hd.countF = 3;
         hd.countR = 3;
-        result = new List<int>() { };
-        puzzle = new List<int>() {};
+        result = new List<int>(){};
+        puzzle = new List<int>(){};
         gameActive = false;
         score = true;
         wait = 2;
@@ -321,7 +325,7 @@ public class GameManager : MonoBehaviour
         }
         if (perk == true)
         {
-            result = new List<int>() { };
+            result = new List<int>(){ };
             StartCoroutine(Godoja());
             perk = false;
         }
@@ -460,10 +464,6 @@ public class GameManager : MonoBehaviour
                     {
                         buttonClick.Play();
                         Application.OpenURL(rateApp);
-                        /*
-                        GameObject[] ratio = GameObject.FindGameObjectsWithTag("rate");
-                        foreach (GameObject i in ratio)
-                            GameObject.Destroy(i);*/
                     }
                 }
             }
@@ -471,9 +471,11 @@ public class GameManager : MonoBehaviour
 
 
         //puzzle validation
-        if (gameActive == true && result.Count == puzzle.Count)
-        {
-            Debug.Log(result.SequenceEqual(puzzle));
+      
+
+
+
+           /* Debug.Log(result.SequenceEqual(puzzle));
                 if (!result.SequenceEqual(puzzle))
                 {
                     round = 1;
@@ -482,11 +484,8 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     gameUpdate();
-                }
-            }
-        else
-        {
-        }
+                }*/
+          
 
 
 
@@ -504,6 +503,7 @@ public class GameManager : MonoBehaviour
                         audio.clip = one;
                         audio.Play();
                         game(1);
+                  PuzzleValidation( result, puzzle );
                     }
                     else if (Input.GetTouch(0).phase == TouchPhase.Began && hit.collider.tag == "2")
                     {
@@ -511,25 +511,66 @@ public class GameManager : MonoBehaviour
                         audio.clip = two;
                         audio.Play();
                         game(2);
-                    }
+                  PuzzleValidation( result, puzzle );
+               }
                     else if (Input.GetTouch(0).phase == TouchPhase.Began && hit.collider.tag == "3")
                     {
                         AudioSource audio = GetComponent<AudioSource>();
                         audio.clip = three;
                         audio.Play();
                         game(3);
+                  PuzzleValidation( result, puzzle );
 
-                    }
+               }
                     else if (Input.GetTouch(0).phase == TouchPhase.Began && hit.collider.tag == "4")
                     {
                         AudioSource audio = GetComponent<AudioSource>();
                         audio.clip = four;
                         audio.Play();
                         game(4);
-                    }
+                  PuzzleValidation( result, puzzle );
+               }
                 }
             }
         }
     }
+
+   void PuzzleValidation(List<int> result, List<int> puzzle)
+   {
+      int countMistake = 0;
+      if( result.Count < puzzle.Count )
+      {
+         for( int i = 0; i < result.Count-1; i++ )
+         {
+            if( result[i] != puzzle[i] )
+            {
+               countMistake += 1;
+               break;
+            }
+            else
+            {
+               continue;
+            }
+         }
+         if( countMistake > 0 )
+         {
+            round = 1;
+            gameOver();
+         }
+      }
+
+      if(result.Count == puzzle.Count )
+      {
+         if( !result.SequenceEqual( puzzle ) )
+         {
+            round = 1;
+            gameOver();
+         }
+         else
+         {
+            gameUpdate();
+         }
+      }
+   }
 }
 

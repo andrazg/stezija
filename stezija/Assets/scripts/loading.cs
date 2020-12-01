@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class loading : MonoBehaviour
+public class Loading : MonoBehaviour
 {
     public Material cube;
 
@@ -24,9 +24,6 @@ public class loading : MonoBehaviour
 
 	void Start ()
     {
-      /*  rend = GameObject.FindGameObjectWithTag("loadcube").GetComponent<Renderer>();
-        rend.material.shader = Shader.Find("Glow");
-        rend.material.SetFloat("Intensity", 0);*/
         async = SceneManager.LoadSceneAsync("main");
         async.allowSceneActivation = false;
         instant = true;
@@ -45,7 +42,8 @@ public class loading : MonoBehaviour
 
     IEnumerator Loader()
     {
-        DestroyObject(die);
+      yield return new WaitForSeconds(2);
+      DestroyObject(die);
         DestroyObject(dieload);
         if (instant)
         {
@@ -56,7 +54,7 @@ public class loading : MonoBehaviour
             Destroy(loaddestr1, 1);
             instant = false;
         }
-        yield return new WaitForSeconds(1.2f);
+       yield return new WaitForSeconds(2);
         async.allowSceneActivation = true;
         
 

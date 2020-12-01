@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class achievements : MonoBehaviour
+public class Achievements : MonoBehaviour
 {
 
     public GameObject ach;
@@ -24,6 +24,8 @@ public class achievements : MonoBehaviour
     Vector3 notWon = new Vector3(-14f, 0.08f, -1f);
     Ray ray;
     RaycastHit hit;
+
+ 
 
     void Start()
     {
@@ -118,7 +120,6 @@ public class achievements : MonoBehaviour
     void Update()
     {
         Camera.main.transform.rotation = Quaternion.Slerp(cam.rotation, lookach.rotation, Time.deltaTime * 2.0f);
-
         if (Input.touchCount == 1)
         {
             ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
@@ -127,6 +128,7 @@ public class achievements : MonoBehaviour
                 if (Input.GetTouch(0).phase == TouchPhase.Began && hit.collider.tag == "play")
                 {
                     SceneManager.LoadScene("loading");
+
                 }
             }
         }
